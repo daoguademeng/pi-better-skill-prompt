@@ -4,7 +4,7 @@
 
 A leaner skill prompt for [Pi](https://github.com/earendil-works/pi). Replaces nested XML skill entries with a Markdown table and adds `load_skill` for on-demand loading.
 
-- **Compact catalog:** only skill names and descriptions stay in the system prompt.
+- **Compact catalog:** a table of skill names and descriptions, with one loading hint.
 - **Progressive disclosure:** the model gets skill paths only when it loads a skill.
 - **No repeated metadata:** loading returns the skill directory and full body, without frontmatter containing the name and description.
 
@@ -40,6 +40,8 @@ After:
 
 ```text
 <available_skills>
+
+Load a skill by name with `load_skill` when its description matches the task.
 
 |name|description|
 |---|---|

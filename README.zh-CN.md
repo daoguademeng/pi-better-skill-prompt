@@ -4,7 +4,7 @@
 
 让 [Pi](https://github.com/earendil-works/pi) 的技能提示词更精简：用 Markdown 表格替代嵌套 XML 技能条目，通过 `load_skill` 按需加载。
 
-- **精简目录**：常驻提示词只保留技能名称和描述。
+- **精简目录**：技能名称和描述组成表格，表格前只有一句加载提示。
 - **渐进式披露**：加载技能时才返回路径，不提前占用上下文。
 - **不重复元数据**：加载结果只有技能目录和完整正文，去掉包含名称、描述的 frontmatter。
 
@@ -40,6 +40,8 @@ Resolve relative paths against the skill's directory (parent of SKILL.md). Use a
 
 ```text
 <available_skills>
+
+Load a skill by name with `load_skill` when its description matches the task.
 
 |name|description|
 |---|---|

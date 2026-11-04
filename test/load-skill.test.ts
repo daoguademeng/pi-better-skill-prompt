@@ -30,7 +30,7 @@ describe("skill catalog", () => {
     await h.prompt();
 
     const prompt = h.lastSystemPrompt();
-    expect(prompt).toContain("<available_skills>\n\n|name|description|\n|---|---|\n|alpha|Alpha does things|\n|beta|Beta does other things|\n\n</available_skills>");
+    expect(prompt).toContain("<available_skills>\n\nLoad a skill by name with `load_skill` when its description matches the task.\n\n|name|description|\n|---|---|\n|alpha|Alpha does things|\n|beta|Beta does other things|\n\n</available_skills>");
     expect(prompt.match(/<available_skills>/g)).toHaveLength(1);
     expect(prompt).not.toContain("<skills>");
     expect(prompt).not.toContain(h.skillsDir);
